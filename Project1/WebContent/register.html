@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css\bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+    	function validateForm()
+    	{
+    		var username=document.myform.uname.value;
+    		var pass=document.myform.pwd.value;
+    		var fullname=document.myform.fname.value;
+    		var mail=document.myform.email.value;
+    		var vname=/^[A-Za-z0-9]{5,20}$/;
+    		var mailreg=/^[a-z0-9._%+-]+@[a-z0-9._-]+\.[a-z]{2,3}$/;
+    		if(name!=null)
+    		if(!vname.test(username))
+    		{
+    			alert("Username must contain atleast 5 characters");
+    			return false;
+    		}
+    		else if(username==null||username=="")
+    		{
+    			alert("Username should not be empty!!");return false;
+    		}
+    		else if(!mailreg.test(mail))
+    			{
+    				alert("Mail must contain all the characters");return false;
+    			}
+    		else if(pass==null||pass=="")
+    		{
+    			alert("Password should not be empty!!");return false;
+    		}	
+    		else if(pass.length<6)
+    		{
+    			alert("Password must contain atleast 6 characters and password is weak");return false;	
+    		}
+    		else
+    			{
+    			return true;
+    			}
+    	}
+    </script>
+<style>
+        .container{
+            position:relative;
+            top:10vh;
+            border: 2px solid black;
+            height: 400px;
+            width: 50vw;
+            float: left;
+            
+        }
+        body{
+        	margin:10px;
+        	position:bottom;
+            background-color:bisque;
+            background-image:url("https://previews.123rf.com/images/khamlaksana/khamlaksana1510/khamlaksana151000010/46638168-a-vintage-camera-on-wooden-background.jpg");
+            background-repeat:no-repeat;
+            background-size:100%;
+        }
+        a{
+        	color:red;
+        }
+        h3{
+        	color:red;
+        	font:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+<h1 class="text-dark text-center">Register</h1><h3></h3>
+<form name="myform" action="http://localhost:8083/Project1/Registerservlet" onsubmit="return validateForm()" method="post">
+<div class="col">
+               <input type="text" name="uname" class="form-control"  placeholder="&#128100;Username" ><br>
+        </div>
+<div class="col">
+               <input type="password" name="pwd" class="form-control " placeholder="&#128273;Password "><br>
+        </div>
+<div class="col">
+               <input type="text" name="fname" class="form-control"  placeholder="&#128100;Full Name" ><br>
+        </div>
+<div class="col">
+                <input type="text" name="email" class="form-control"  placeholder="&#128231;E-Mail Address" ><br>
+         </div>
+         <div class="col">
+                <input type="submit" value="Register" class="btn btn-primary  text-center"><br>
+         </div>
+<p class="text-dark" >Already have an account?<a href="login.html" target="_self">Login</a></p>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
